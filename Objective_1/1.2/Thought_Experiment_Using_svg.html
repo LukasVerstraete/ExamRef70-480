@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Thought Experiment using svg</title>
+		<script>
+				
+			function Circle(target)
+			{
+				this.target = target;
+				this.speed = 0.5;
+				
+				this.moveLeft = function()
+				{
+					this.target.cx.baseVal.value += this.speed;
+				}
+				
+				this.moveRight = function()
+				{
+					this.target.cx.baseVal.value += -this.speed;
+				}
+			}
+		
+			let circle = new Circle(null);
+			let interval;
+			window.onload = function()
+			{
+				circleElement = document.getElementById('circle');
+				circle.target = circleElement;
+				console.log(circleElement);
+				interval = setInterval(draw, 16);
+			};
+			
+			function draw()
+			{
+				circle.moveLeft();
+			}
+		</script>
+	</head>
+	<body>
+		<svg>
+			<circle 
+				id='circle'
+				cx='50'
+				cy='50'
+				r='50'
+				fill='green'
+			/>
+		</svg>
+	</body>
+</html>

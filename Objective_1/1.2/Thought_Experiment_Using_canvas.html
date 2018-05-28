@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Thought Experiment using svg</title>
+		<script>
+				
+			function Circle(x, y)
+			{
+				this.x = x;
+				this.y = y;
+				this.speed = 0.5;
+				
+				this.moveLeft = function()
+				{
+					this.x += this.speed;
+				}
+				
+				this.moveRight = function()
+				{
+					this.x += -this.speed;
+				}
+				
+				this.draw = function()
+				{
+					ctx.beginPath();
+					ctx.arc(this.x + 50, this.y + 50, 50, 0, Math.PI * 2, false);
+					ctx.fillStyle = "#00FF00";
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+				}
+			}
+		
+			let circle = new Circle(50, 50);
+			let interval;
+			let ctx;
+			
+			window.onload = function()
+			{
+				let canvas = document.getElementById('canvas');
+				ctx = canvas.getContext('2d');
+				interval = setInterval(draw, 16);
+			};
+			
+			function draw()
+			{
+				circle.moveLeft();
+				ctx.fillStyle="#FFFFFF";
+				ctx.fillRect(0, 0, 600, 400);
+				circle.draw();
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id='canvas' width='600' height='400'>
+			Brwoser does not support HTML5 canvas. Please consider updating your browser.
+		</canvas>
+	</body>
+</html>
