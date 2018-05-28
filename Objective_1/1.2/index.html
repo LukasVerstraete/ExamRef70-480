@@ -3,15 +3,36 @@
 	<head>
 		<title>index page</title>
 		<script>
-			window.onload = function()
+			function Red(evt)
+			{
+				let target = evt.target;
+				target.setAttribute('style', 'fill: red');
+			}
+			
+			function Green(evt)
+			{
+				let target = evt.target;
+				target.setAttribute('style', 'fill: green');
+			}
+			/*window.onload = function()
 			{
 				const div = document.getElementById('outerDiv');
-				alert(div.innerHTML);
-			}
+				const paragraphs = div.getElementsByTagName('p');
+				alert(paragraphs.length);
+			}*/
 		</script>
 	</head>
 	<body>
-		<div id='outerDiv'>
+		<svg>
+			<circle id='circle' 
+					cx='50'
+					cy='50'
+					r='50'
+					fill='green'
+					onmouseover='Red(evt);'
+					onmouseout='Green(evt);'/>
+		</svg>
+		<!-- <div id='outerDiv'>
 			<p class='mainPara'>Main Paragraph</p>
 			<ul>
 				<li>First list item</li>
@@ -43,6 +64,6 @@
 				</tr>
 			</table>
 			<input type='text'/><input type='submit' value='Submit'/>
-		</div>
+		</div> -->
 	</body>
 </html>
