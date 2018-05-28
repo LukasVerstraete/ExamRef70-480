@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transformations</title>
+		<style>
+			#horse
+			{
+				height: 150px;
+				width: 150px;
+				border: 1px solid black;
+			}
+			.trans
+			{
+				
+				transform: translate(200px, 0px) scale(1.5) skew(10deg, 10deg);
+			}
+		</style>
+		<script>
+			window.onload = function()
+			{
+				document.getElementById('horse').onclick = function() 
+				{
+					this.classList.add('trans');
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<img id='horse' src='../../images/horse.png' style='position: relative'/>
+	</body>
+</html>
