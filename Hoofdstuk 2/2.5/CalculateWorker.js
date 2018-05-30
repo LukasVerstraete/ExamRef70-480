@@ -1,6 +1,6 @@
 onmessage = function(evt)
 {
-	let work = 200000000;
+	let work = 10000000;
 	let i = 0;
 	let a = new Array(work);
 	let sum = 0;
